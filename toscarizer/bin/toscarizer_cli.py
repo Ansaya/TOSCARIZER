@@ -107,11 +107,11 @@ def tosca(application_dir, base, optimal, elastic, im_auth, domain):
 
     if base:
         dag = parse_dag("%s/%s" % (application_dir, BASE_DAG_FILE))
-        deployments_file = "%s/%s" % (application_dir, BASE_RESOURCES_COMPLETE_FILE)
+        deployments_file = "%s/%s" % (application_dir, DEPLOYMENTS_FILE)
         resources_file = "%s/%s" % (application_dir, BASE_RESOURCES_COMPLETE_FILE)
     else:
         dag = parse_dag("%s/%s" % (application_dir, OPTIMAL_DAG_FILE))
-        deployments_file = "%s/%s" % (application_dir, RESOURCES_COMPLETE_FILE)
+        deployments_file = "%s/%s" % (application_dir, DEPLOYMENTS_FILE)
         resources_file = "%s/%s" % (application_dir, RESOURCES_COMPLETE_FILE)
 
     toscas = gen_tosca_yamls(dag, resources_file, deployments_file,
